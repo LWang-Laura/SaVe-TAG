@@ -20,7 +20,7 @@ pip install imblearn
 You can access our preprocessed dataset here: [SaVe-TAG-processed dataset](https://www.dropbox.com/scl/fi/nktqtna8httsvvkehp2x2/dataset.zip?rlkey=4vipqaa6bdtqkkzfvk5r4gli1&st=ue5dmc1z&dl=0). Then added downloaded `.pt` file under the folder "dataset".
 
 ### Run Experiments 
-We have included the pretrained link predictor and fine-tuned models in the directory so that experiments can be conducted directly using the following command:
+We have included the pretrained confidence function in the directory so that experiments can be conducted directly using the following command:
 ```
 ./run.sh
 ```
