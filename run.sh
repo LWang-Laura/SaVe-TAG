@@ -4,7 +4,7 @@ do
         # echo "===' $name 'without_confidence-function==="
 
 
-        # echo '---NUM origin ---'
+        # echo '---Origin ---'
         #     python src/main.py --dataset  $name 
 
 
@@ -12,8 +12,9 @@ do
         for mtd   in O  S  M     
         do   
 
-                echo '---'NUM $mtd '---'
-                python src/main.py --dataset  $name --method $mtd  
+                # echo '---'NUM $mtd '---'
+                # python src/main.py --dataset  $name --method $mtd  
+
                 # echo '---''LLM' $mtd '---'
                 # python src/main.py  --dataset  $name  --llm="True"  --method $mtd #--load_response # --save
 
@@ -25,7 +26,7 @@ do
                 # echo '---'NUM_C $mtd '---'
                 # python src/main.py --dataset  $name --method $mtd  --edge="True"
 
-                echo '---''SaVe-TAG' $mtd '---'
+                echo '---''SaVe-TAG (LLM_C)' $mtd '---'
                 python src/main.py --dataset  $name  --llm="True"  --method $mtd --edge="True" #--load_response  
 
 
