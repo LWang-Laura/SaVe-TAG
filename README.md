@@ -4,7 +4,6 @@ This GitHub repo is the code implementation of the paper "SaVe-TAG:
 Semantic-aware Vicinal Risk Minimization for Long-Tailed Text-Attributed Graphs".
 
 ### Environment Configuration
-<! -- Run `pip install -r requirements.txt` or -->  
 Install the following environment manually.
 ```
 # Install using conda ( CUDA 12.1 )
