@@ -1,1 +1,1 @@
-Download the raw data here: https://github.com/CurryTang/Graph-LLM and https://huggingface.co/datasets/zkchen/tsgfm/blob/main/minilmdata.zip
+Download the raw data here: https://github.com/CurryTang/Graph-LLM and https://huggingface.co/datasets/zkchen/tsgfm/blob/main/minilmdata.zip. Our code for preprocessing has been uploaded in `preprocess.ipynb`.
