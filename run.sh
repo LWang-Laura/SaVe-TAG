@@ -24,10 +24,10 @@ do
         
 
                 # echo '---'NUM_C $mtd '---'
-                # python src/main.py --dataset  $name --method $mtd  --edge="True"
+                # python src/main.py --dataset  $name --method $mtd  --CF="True"
 
                 echo '---''SaVe-TAG (LLM_C)' $mtd '---'
-                python src/main.py --dataset  $name  --llm="True"  --method $mtd --edge="True" #--load_response  
+                python src/main.py --dataset  $name  --llm="True"  --method $mtd --CF="True" #--load_response  
 
 
         done
