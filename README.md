@@ -30,10 +30,12 @@ We have included the pretrained confidence function in the directory so that exp
 
 **Load generated response**
 After running for the first time, the code will automatically saved in the folder `./llm_response`. You can just load the generated data to save time from regenerating the texts again. 
+
 *Initial generation / Regenerating the texts with LLM*: 
 ```
 python src/main.py --dataset  $name  --llm="True"  --method $mtd --CF="True" 
 ```
+
 *Loading the generated texts*: 
 ```
 python src/main.py --dataset  $name  --llm="True"  --method $mtd --CF="True" --load_response 
