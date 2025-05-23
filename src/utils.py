@@ -23,17 +23,6 @@ def index_to_mask(index, size):
     mask[index] = 1
     return mask
 
-# def index_to_mask(train_index, val_index, test_index, size):
-#     train_mask = torch.zeros(size, dtype=torch.bool)
-#     val_mask = torch.zeros(size, dtype=torch.bool)
-#     test_mask = torch.zeros(size, dtype=torch.bool)
-
-#     train_mask[train_index] = 1
-#     val_mask[val_index] = 1
-#     test_mask[test_index] = 1
-
-#     return train_mask, val_mask, test_mask
-
 
 
 def model_encode(sentences, model, tokenizer):

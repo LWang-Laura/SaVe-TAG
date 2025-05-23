@@ -174,7 +174,7 @@ def integrate_new_edges(data,new_xs,num_new_nodes,args,new_edge_index):
  
         
    
-    if args.edge == "True":
+    if args.CF == "True":
         
         
         
@@ -239,7 +239,7 @@ def num_itp_S(x, idxs, count, k, imb_class, i, data, args, new_xs, new_ys, new_e
             new_xs.append(new_x)
             new_ys.append(imb_class[i])
             
-            if args.edge == "False":
+            if args.CF == "False":
                 new_edge_index = edge_duplication(data, new_edge_index, ori_idx_start, num_new_nodes)
     
 
@@ -285,7 +285,7 @@ def num_itp_M(data, x, idxs, train_idxs, count, k, imb_class, i, args, new_xs, n
             new_xs.append(new_x)
             new_ys.append(imb_class[i])
             
-            if args.edge == "False":
+            if args.CF == "False":
                 new_edge_index = edge_duplication(data, new_edge_index, ori_idx_start, num_new_nodes)
 
             num_new_nodes += 1
@@ -307,7 +307,7 @@ def num_itp_O(x, idxs, count, imb_class, i, args, new_xs, new_ys, new_edge_index
             new_xs.append(new_x)
             new_ys.append(imb_class[i])
             
-            if args.edge == "False":
+            if args.CF == "False":
                 new_edge_index = edge_duplication(data, new_edge_index, ori_idx_start, num_new_nodes)
 
             num_new_nodes += 1
@@ -348,7 +348,7 @@ def llm_itp_S(x, idxs, k, count, data, imb_class, i, args, new_ys, new_edge_inde
 
             new_ys.append(imb_class[i])
 
-            if args.edge == "False":
+            if args.CF == "False":
                 new_edge_index = edge_duplication(data, new_edge_index, ori_idx_start, num_new_nodes)
 
             num_new_nodes += 1
@@ -397,7 +397,7 @@ def llm_itp_M(x, idxs, k, count, data, train_idxs, imb_class, i, args, new_ys, n
             prompt_list.append(prompt)
             new_ys.append(imb_class[i])
 
-            if args.edge == "False":
+            if args.CF == "False":
                 new_edge_index = edge_duplication(data, new_edge_index, ori_idx_start, num_new_nodes)
 
             num_new_nodes += 1
@@ -420,7 +420,7 @@ def llm_itp_O(x, idxs, count, data, imb_class, i, args, new_ys, new_edge_index, 
 
             new_ys.append(imb_class[i])
 
-            if args.edge == "False":
+            if args.CF == "False":
                 new_edge_index = edge_duplication(data, new_edge_index, ori_idx_start, num_new_nodes)
 
             num_new_nodes += 1
@@ -449,7 +449,7 @@ def llm_few_shot(x, idxs, count, data, imb_class, i, args, new_ys, new_edge_inde
 
             new_ys.append(imb_class[i])
 
-            if args.edge == "False":
+            if args.CF == "False":
                 new_edge_index = edge_duplication(data, new_edge_index, ori_idx_start, num_new_nodes)
 
             num_new_nodes += 1

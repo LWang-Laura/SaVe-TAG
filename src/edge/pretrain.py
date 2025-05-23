@@ -80,8 +80,8 @@ def load_model(data, args):
     seed_everything(args.seed)
     
     dataset_dir=os.path.join("CF",f'{args.dataset}_CF')
-    encoder_path = os.path.join(dataset_dir, f'{args.model}_encoder.pt')
-    predictor_path = os.path.join(dataset_dir, f'{args.model}_predictor.pt')
+    encoder_path = os.path.join(dataset_dir, 'MLP_encoder.pt')
+    predictor_path = os.path.join(dataset_dir, 'MLP_predictor.pt')
     
 
     encoder = MLP(data.x.shape[1], args.n_hidden, args.n_hidden, args.n_layers, args.en_dp).to(args.device)

@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser()
 
 # Setup  
 parser.add_argument('--dataset', type=str, default='Cora',
-                    help='Name of the dataset to use (Cora, Citeseer, PubMed, Photo, Computer, Child)')
+                    help='Name of the dataset to use.', choices=["Cora", "Citeseer", "PubMed", "Photo", "Computer", "Child"])
 parser.add_argument('--seed', type=int, default=1033,
                     help='Random seed for reproducibility')
 parser.add_argument('--imb_ratio', type=float, default=0.2,
@@ -17,21 +17,21 @@ parser.add_argument('--imb_ratio', type=float, default=0.2,
 parser.add_argument('--k', type=int, default=3,
                     help='Number of top neighbors to consider for interpolation')
 parser.add_argument('--method', type=str, default="none",
-                    help='Interpolation method to use (e.g., "S", "M","O", "none")')
+                    help='Interpolation method to use.', choices= ["S", "M","O", "none"])
 parser.add_argument('--llm', type=str, default="False",
-                    help='Whether to use LLM-based augmentation (True/False)')
-parser.add_argument('--edge', type=str, default="False",
-                    help='Whether to generate edges for new nodes (True/False)')
+                    help='Whether to use LLM-based augmentation.', choices= ['True','False'])
+parser.add_argument('--CF', type=str, default="False",
+                    help='Whether to used confidence function for edge assignment.', choices= ['True','False'])
 parser.add_argument('--load_response', action='store_true',
                     help='Flag to load previously generated responses instead of regenerating')
 parser.add_argument('--embed', type=str, default="SBERT",
-                    help='Embedding type to use for text attributes (e.g., SBERT, TF-IDF)')
+                    help='Embedding type to use for text attributes.', choices=["SBERT", "SimCSE", "Llama3"])
 parser.add_argument('--model_name', type=str, default="meta-llama/Meta-Llama-3-8B-Instruct",
                     help='Name or path of the LLM to use for text generation')
 parser.add_argument('--save', action='store_true',
                     help='Flag to save generated data and model checkpoints')
 
-# Edge assignment
+# Confidence function
 parser.add_argument('--encoder_lr', type=float, default=0.001,
                     help='Learning rate for the edge encoder')
 parser.add_argument('--predictor_lr', type=float, default=0.001,
