@@ -42,5 +42,5 @@ python src/main.py --dataset  $name  --llm="True"  --method $mtd --CF="True" --l
 ```
 
 ### Optional: Pretrain Confidence Function
-We have uploaded pretrained confidence functions for each dataset in the `./CF` directory. To train a new confidence function, simply delete the corresponding `.pt` files and run `./run.sh.` The code will automatically pretrain confidence functions if they are not found.
+We have uploaded pretrained confidence functions for each dataset in the `./CF` directory. To train a new confidence function, simply delete the corresponding `.pt` files and run `./run.sh.` The code will automatically pretrain new ones if they are not found.
 
