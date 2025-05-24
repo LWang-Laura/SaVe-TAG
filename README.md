@@ -41,6 +41,6 @@ python src/main.py --dataset  $name  --llm="True"  --method $mtd --CF="True"
 python src/main.py --dataset  $name  --llm="True"  --method $mtd --CF="True" --load_response 
 ```
 
-### Optional: Pretrain Link Predictor
-We have uploaded pretrained confidence functions for each dataset in the `./CF` directory. To train a new link predictor, simply delete the corresponding `.pt` files and run `./run.sh.` The code will automatically pretrain new confidence functions if they are not found.
+### Optional: Pretrain Confidence Function
+We have uploaded pretrained confidence functions for each dataset in the `./CF` directory. To train a new confidence function, simply delete the corresponding `.pt` files and run `./run.sh.` The code will automatically pretrain confidence functions if they are not found.
 
