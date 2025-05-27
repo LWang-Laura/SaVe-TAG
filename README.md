@@ -1,7 +1,7 @@
 # SaVe-TAG
 
-This GitHub repo is the code implementation of the paper "SaVe-TAG: 
-Semantic-aware Vicinal Risk Minimization for Long-Tailed Text-Attributed Graphs".
+This GitHub repo is the code implementation of the paper ["SaVe-TAG: 
+Semantic-aware Vicinal Risk Minimization for Long-Tailed Text-Attributed Graphs"](https://arxiv.org/abs/2410.16882).
 
 ### Install Environment
 Install with `pip install -r requirements.txt` or manually install the following environment:
