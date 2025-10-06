@@ -2,6 +2,7 @@ import os.path as osp
 import torch_geometric.transforms as T
 import torch
 from sentence_transformers import SentenceTransformer
+from  transformers import AutoTokenizer, AutoModel
 from torch_geometric.utils import add_remaining_self_loops, degree
 from torch_sparse import SparseTensor
 from torch_geometric.utils import to_undirected, add_self_loops
@@ -22,7 +23,10 @@ warnings.filterwarnings("ignore", message="`resume_download` is deprecated")
 warnings.filterwarnings("ignore")
 
 def get_dataset(name,  args):
-    data = torch.load(f'./dataset/{name}.pt')
+    # data = torch.load(f'./dataset/{name}.pt')
+    data = torch.load(f'./dataset/{name}.pt', weights_only=False, map_location='cpu')
+
+
     seed_everything(args.seed) 
 
     my_num_val=500

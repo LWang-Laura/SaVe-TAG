@@ -17,7 +17,7 @@ parser.add_argument('--imb_ratio', type=float, default=0.2,
 parser.add_argument('--k', type=int, default=3,
                     help='Number of top neighbors to consider for interpolation')
 parser.add_argument('--method', type=str, default="none",
-                    help='Interpolation method to use.', choices= ["S", "M","O", "none"])
+                    help='Interpolation method to use.', choices= ["S", "M","O", "zero_shot", "few_shots","none"])
 parser.add_argument('--llm', type=str, default="False",
                     help='Whether to use LLM-based augmentation.', choices= ['True','False'])
 parser.add_argument('--CF', type=str, default="False",
@@ -70,4 +70,18 @@ parser.add_argument('--epochs', type=int, default=1000,
                     help='Number of training epochs')
 
 
+# LLM arguments
+parser.add_argument("--llm_model", type=str, default="llama", choices=["llama","qwen","mistral"])
+parser.add_argument("--llm_model_path", type=str, default="meta-llama/Meta-Llama-3-8B-Instruct")
+parser.add_argument("--system_prompt", type=str, default=None)
+parser.add_argument("--llm_max_new_tokens", type=int, default=256)
+parser.add_argument("--llm_temperature", type=float, default=0.7)
+parser.add_argument("--llm_top_p", type=float, default=0.95)
+parser.add_argument("--llm_repetition_penalty", type=float, default=1.0)
+
+
 args = parser.parse_args()
+
+# Back-compat / single source of truth for the model id
+if getattr(args, 'llm_model_path', None):
+    args.model_name = args.llm_model_path
