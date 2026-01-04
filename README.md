@@ -46,3 +46,15 @@ python src/main.py --dataset  $name  --llm="True"  --method $mtd --CF="True" --l
 ### Optional: Pretrain Confidence Function
 We have uploaded pretrained confidence functions for each dataset in the `./CF` directory. To train a new confidence function, simply delete the corresponding `.pt` files and run `./run.sh.` The code will automatically pretrain new ones if they are not found.
 
+
+### Configurations
+- **Text Encoding:** We utilize the Sentence Transformer (`all-MiniLM-L6-v2`) for its efficiency in semantic comprehension. This model strikes an excellent balance between being lightweight and delivering strong performance. A comparison with other embeddings is provided in Figure \ref{fig:embed}.
+- **Node Classification:** By default, we use GCN as our model, consisting of 2 hidden layers with 64 neurons each. The dropout rate is set to 0.5, and the model is trained for 1000 epochs with a learning rate of 0.01 (the same configuration is used when we switch to SAGE in experiments reported in Table \ref{tab:sage_mlp}).
+- **Confidence Function:** We employ MLP models composed of 1 hidden layer with 256 neurons and a dropout rate of 0. These models are trained for 1000 epochs with a learning rate of 0.001.
+
+- **Text Generation:** By default, we leverage the pre-trained Llama3-8B-Instruct model from Meta for text generation, configured with bfloat16 and default parameters.
+
+- **Data Augmentation:** Due to the limited number of training nodes in our low-labeled, imbalanced settings, we set \( k = 3 \) for the k-nearest neighbors in our LLM-based methods.
+
+- **Edge Generation:** For small datasets (Cora, PubMed, and Citeseer), we set \( k = |\mathcal{V}| \times 20 \) and add the top-\( k \) edges with the highest prediction scores to the graph. For larger datasets (Photo, Computer, and Children), we increase \( k \) to \( |\mathcal{V}| \times 40 \).
+
